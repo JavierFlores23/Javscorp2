@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jav's Corp - Agencia de Marketing</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background-color: #111827;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+    nav {
+      background-color: #1f2937;
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #60a5fa;
+    }
+    section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      color: #111827;
+    }
+    footer {
+      background-color: #111827;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .cta {
+      background-color: #2563eb;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      margin: 2rem 0;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .cta a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jav's Corp</h1>
+    <p>Tu agencia de marketing digital de confianza</p>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#portafolio">Portafolio</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="sobre">
+    <h2>Sobre Nosotros</h2>
+    <p>En Jav's Corp ayudamos a marcas y emprendedores a crecer mediante estrategias digitales efectivas. Somos un equipo apasionado por la creatividad, el análisis y los resultados.</p>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <ul>
+      <li>Gestión de redes sociales</li>
+      <li>Publicidad digital (Meta Ads, Google Ads)</li>
+      <li>Diseño gráfico y branding</li>
+      <li>Desarrollo web</li>
+      <li>Email marketing y automatización</li>
+    </ul>
+  </section>
+
+  <section id="portafolio">
+    <h2>Portafolio</h2>
+    <p>Estamos orgullosos de trabajar con marcas locales e internacionales. Próximamente mostraremos nuestros casos de éxito aquí.</p>
+  </section>
+
+  <section class="cta">
+    <p>¿Listo para llevar tu marca al siguiente nivel?</p>
+    <a href="#contacto">Contáctanos hoy</a>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>📧 javscorp@gmail.com</p>
+    <p>📱 WhatsApp: +503 7000-0000</p>
+    <p>Síguenos en redes: @javscorp</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Jav's Corp. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
